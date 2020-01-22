@@ -12,10 +12,18 @@ const DisplayCv = ({ appStates}) => {
             <Container>
                 <HiddenDetails appStates={appStates} info={cvInfo.workExperience}/>
             </Container>
-        <HiddenDetails appStates={appStates} info={cvInfo.languageSkills}/>
-        <HiddenDetails appStates={appStates} info={cvInfo.hobbies}/>
-        <HiddenDetails appStates={appStates} info={cvInfo.contactInformation}/>
-        <HiddenDetails appStates={appStates} info={cvInfo.education}/>
+            <Container>
+                <HiddenDetails appStates={appStates} info={cvInfo.languageSkills}/>
+            </Container>
+            <Container>
+                <HiddenDetails appStates={appStates} info={cvInfo.hobbies}/>
+            </Container>
+            <Container>
+                <HiddenDetails appStates={appStates} info={cvInfo.contactInformation}/>
+            </Container>
+            <Container>
+                <HiddenDetails appStates={appStates} info={cvInfo.education}/>
+            </Container>
         </>
         )
 }
