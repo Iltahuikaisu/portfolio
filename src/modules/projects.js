@@ -6,14 +6,15 @@ const ProjectsByState = (props) => {
             <div>loading</div>
         )
     } else {
+        console.log(props)
     const projects = props.appStates.allProjects
     const filteredProjects = projects.map((value)=>{
         if(props.state === value.state) { // filters the 
             if(props.appStates.showDetails.find((shownDetails)=>{
                 if(shownDetails === value.name) {
-                    return(true)
+                    return true
                 } else {
-                    return(false)
+                    return false
                 }
             })) {
                 return(<div key={value.name}>
@@ -21,9 +22,9 @@ const ProjectsByState = (props) => {
                     <button onClick={()=>{
                         props.appStates.setShowDetails(props.appStates.showDetails.filter((showValue)=>{
                             if(showValue ===value.name) {
-                                return(false)
+                                return false
                             } else {
-                                return(true)
+                                return true
                             }
                         }))
                     }}>less details</button>
@@ -38,7 +39,7 @@ const ProjectsByState = (props) => {
             }
 
         } else {
-            return(false)
+            return false
         }
     })
     return(

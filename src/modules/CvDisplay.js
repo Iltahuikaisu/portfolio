@@ -1,6 +1,7 @@
 import HiddenDetails from "./hiddenDetails";
 import cvInfo from "../information/cvInfo";
 import React from 'react';
+import Container from 'react-bootstrap/Container'
 
 const DisplayCv = ({ appStates}) => {
 
@@ -8,7 +9,9 @@ const DisplayCv = ({ appStates}) => {
 
     return(
         <>
-        <HiddenDetails appStates={appStates} info={cvInfo.workExperience}/>
+            <Container>
+                <HiddenDetails appStates={appStates} info={cvInfo.workExperience}/>
+            </Container>
         <HiddenDetails appStates={appStates} info={cvInfo.languageSkills}/>
         <HiddenDetails appStates={appStates} info={cvInfo.hobbies}/>
         <HiddenDetails appStates={appStates} info={cvInfo.contactInformation}/>

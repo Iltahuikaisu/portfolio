@@ -7,10 +7,12 @@ import Feedback from './modules/feedback'
 import CvDisplay from './modules/CvDisplay'
 import ProjectsSchedule from './modules/ProjectsSchedule'
 import LinksToOtherMedia from './modules/LinksToOtherMedia'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container'
 
 
 const App = () => {
-    const [allProjects, setAllProjects] = useState('loading')
+    const [allProjects, setAllProjects] = useState(['loooadingg'])
     const [showDetails, setShowDetails] = useState([])
     const [newFeedback, setNewFeedback]= useState('')
     const [newName, setNewName] = useState('')
@@ -29,7 +31,7 @@ const App = () => {
         )
     },[])
   return (
-      <Container-fluid>
+      <Container>
     <div>
         <h2>
             Portfolio Aaro-Antero Kurki
@@ -39,7 +41,6 @@ const App = () => {
             <LinksToOtherMedia appStates={appStates}/>
         </div>
         <ProjectsSchedule appStates = {appStates}/>
-        <div></div>
     </div>
     <h3>Curriculum Vitae</h3>
         <p>
@@ -52,7 +53,7 @@ const App = () => {
     </div>
         <Feedback appStates={appStates}/>
     </div>
-      </Container-fluid>
+      </Container>
   )
 }
 
