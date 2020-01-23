@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import server from './serverInterface'
 
 
 const Feedback = (props) => {
+    const [newFeedback, setNewFeedback]= useState('')
+    const [newName, setNewName] = useState('')
     console.log(props)
-    const feedback = {feedback:props.appStates.newFeedback,
-        name:props.appStates.newName
+    const feedback = {feedback:newFeedback,
+        name:newName
     }
     return(
         <div>
@@ -13,11 +15,11 @@ const Feedback = (props) => {
             <form >
             <div>
             <div>Input your name (optional)</div>
-            <input type="text" onChange={(event)=>(props.appStates.setNewName(event.target.value))}></input>
+            <input type="text" onChange={(event)=>(setNewName(event.target.value))}></input>
             </div>
             <div>
             <div>Share your thoughts</div>
-            <textarea rows="10" columns="50" onChange={(event)=>(props.appStates.setNewFeedback(event.target.value))}></textarea>
+            <textarea rows="10" columns="50" onChange={(event)=>(setNewFeedback(event.target.value))}></textarea>
             </div>
             <input type="submit" title="Submit" onClick={(event)=>{
                 event.preventDefault()
@@ -29,6 +31,5 @@ const Feedback = (props) => {
         </div>
     )
 }
-
 
 export default Feedback

@@ -1,40 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const hiddenDetails = (props) => {
+const HiddenDetails = (props) => {
     const name = props.info.name
     const details = props.info.details
-    const showDetails = props.appStates.showDetails
-    const setShowDetails = props.appStates.setShowDetails
-    if(showDetails.find((value)=>{
-        if(value===name) {
-            return(true)
-        } else {
-            return(false)
-        }
-    })) {
+    const [showDetails, setShowDetails] = useState(false)
+    const toggleDetails = () => {
+        setShowDetails(!showDetails)
+    }
+    if (showDetails) {
         return(
-        <>
-        {details}
-        <button onClick={()=>{
-            setShowDetails(showDetails.filter((showValue)=>{
-                if(showValue ===name) {
-                    return(false)
-                } else {
-                    return(true)
-                }
-            }))
-        }}>less details</button>
-        </>
-        )    
+            <div>
+                {details}
+                <button onClick={toggleDetails}>less</button>
+            </div>
+        )
     } else {
-        return(<>
-            {name}
-            <button onClick={()=>{
-                    setShowDetails(showDetails.concat(name))
-                }}>more details</button>
-        </>)
+        return(
+            <div>
+                {name}
+                <button onClick={toggleDetails}>more</button>
+            </div>
+        )
     }
 
 }
 
-export default hiddenDetails
+export default HiddenDetails

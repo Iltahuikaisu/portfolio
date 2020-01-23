@@ -14,12 +14,9 @@ import Container from 'react-bootstrap/Container'
 const App = () => {
     const [allProjects, setAllProjects] = useState(['loooadingg'])
     const [showDetails, setShowDetails] = useState([])
-    const [newFeedback, setNewFeedback]= useState('')
-    const [newName, setNewName] = useState('')
+    
     const appStates = {allProjects:allProjects,setAllProjects:setAllProjects,
-        showDetails:showDetails,setShowDetails:setShowDetails,
-        newFeedback:newFeedback, setNewFeedback:setNewFeedback,
-        newName:newName, setNewName:setNewName
+        showDetails:showDetails,setShowDetails:setShowDetails
     }
 
     useEffect(()=>{
