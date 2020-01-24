@@ -6,13 +6,13 @@ const Links = ({appStates}) => {
     return(
         <>
             <div>
-                <HiddenDetails appStates={appStates} info={cvInfo.github}/>
+                <HiddenDetails  info={cvInfo.github}/>
             </div>
             <div>
-                <HiddenDetails appStates={appStates} info={cvInfo.linkedIn}/>
+                <HiddenDetails  info={cvInfo.linkedIn}/>
             </div>
             <div>
-                <HiddenDetails appStates={appStates} info={cvInfo.portfolioInfo}/>
+                <HiddenDetails  info={cvInfo.portfolioInfo}/>
             </div>
         </>
     )

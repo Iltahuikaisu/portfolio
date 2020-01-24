@@ -17,7 +17,8 @@ const ProjectsByState = (props) => {
                     return false
                 }
             })) {
-                return(<div key={value.name}>
+                return(
+                <div key={value.name}>
                     {value.details}
                     <button onClick={()=>{
                         props.appStates.setShowDetails(props.appStates.showDetails.filter((showValue)=>{
@@ -30,7 +31,8 @@ const ProjectsByState = (props) => {
                     }}>less details</button>
                 </div>)
             } else {
-            return(<div key={value.name}>
+            return(
+            <div key={value.name}>
                 {value.name}
                 <button onClick={()=>{
                         props.appStates.setShowDetails(props.appStates.showDetails.concat(value.name))
