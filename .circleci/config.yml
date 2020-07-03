@@ -10,8 +10,6 @@ workflows:
     jobs:
       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
           app-name: portfolio-aaro
-          requires:
-            - build
           filters:
             branches:
               only: sequential-branch-filter
